@@ -1,0 +1,245 @@
+/* Common styles */
+
+html, body {
+    height: 100%;
+    width: 100%;
+    
+}
+
+body {
+    background-color: #6725A8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background-color: transparent;
+    border: unset;
+}
+
+.prevent-select {
+    /* prevent selecting */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+
+.usualTypography {
+    color: #000;
+    font-family: Segoe UI;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+/* header styles */
+
+.header {
+    height: 88px;
+    padding: 16px 3px 16px 24px;
+    /* background-color: #6725A8; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn:hover,
+ button:hover {
+    cursor: pointer;
+}
+
+.header__btn {
+    height: 48px;
+    margin-right: 16px;
+    padding: 12px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.header__brandName {
+    color:  #FFF;
+    font-family: Segoe UI;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    font-variant: all-small-caps;
+    letter-spacing: 0.56px;
+    margin: 0;
+    margin-right: 32px;
+}
+
+.header__searchInputBox {
+    height: 48px;
+    width: 594px;
+    padding: 0 20px;
+    margin-right: 32px;
+    border-radius: 36px;
+    background: rgba(255, 255, 255, 0.20);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header__searchInput {
+    height: 100%;
+    width: 562px;
+    margin-right: 8px;
+    
+    border-color: unset;
+    border-width: 0;
+    background: transparent;
+    color: #FFF;
+    font-family: Segoe UI;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.header__searchInput::placeholder {
+    color: #FFF;
+    font-family: Segoe UI;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    opacity: 0.5;
+}
+
+.header__nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    gap: 40px;
+    margin-right: 17px;
+}
+
+.header__searchInput:focus {
+    border-color: unset;
+    outline: unset;
+    border-width: 0;
+}
+
+.header__navBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+
+.header__profileText, .header__basketText {
+    color: #FFF;
+    font-family: Segoe UI;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.header__basket {
+    position: relative;
+}
+
+.header__basketCounter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    padding: 0 2px;
+    position: absolute;
+    top: -2px;
+    right:0;
+    border-radius: 50px;
+    background: #F55123;
+    color: #FFF;
+    text-align: center;
+    font-family: Segoe UI;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+/* main block styles */
+
+.goods {
+    height: calc(100% - 88px);
+    border-radius: 24px;
+    background-color: #fff;
+    padding: 24px;
+    position: relative;
+}
+
+/* aside panel styles */
+
+.aside {
+    width: 30%;
+    position: absolute;
+    right: 24px;
+    top: 22px;
+    padding: 16px 24px 24px 24px;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.30), 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aside__usualTypography_header {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.24px;
+}
+.aside__usualTypography_headerSmall {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.aside__usualTypography_small {
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.aside__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.aside__orderInfo,
+.aside__deliveryHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.aside__basketInfo {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.aside__delivery {
+width: 100%;
+}
+
+.usualTypography_pink {
+    color: #CB11AB;
+    border-bottom: 1px dashed rgba(203, 17, 171, 0.20);
+    width: fit-content;
+}
+
+
+
