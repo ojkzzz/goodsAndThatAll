@@ -255,7 +255,7 @@ button:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: calc(100% - 88px);
+  /* height: calc(100% - 88px); */
   border-radius: 24px;
   background-color: #F6F6FA;
   padding: 24px;
@@ -421,7 +421,10 @@ button:hover {
 
 /* basket */
 
-.basket {
+.goods__leftSide {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   width: calc(100% - 350px);
 }
 
@@ -489,6 +492,7 @@ button:hover {
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 397px;
 }
 
 .basket__typography_red {
@@ -558,10 +562,48 @@ button:hover {
   justify-content: flex-end;
 }
 
+/* unavailiableBasket */
+
+.unavailiableBasketTypography {
+  color:  #000;
+  font-family: Segoe UI;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.unavailiableBasket .checkboxContainer {
+  display: none;
+}
+
+.unavailiableBasket .accordionHeader {
+  justify-content: space-between;
+}
+
+.unavailiableBasket .basket__img {
+  filter: grayscale(100%)
+}
+
+.unavailiableBasket .basket__goodsName, .unavailiableBasket .basket__typography_small {
+  color: #A0A0A4;
+}
+
+.unavailiableBasket .basket__typography_grey, .unavailiableBasket .basket__stock, .unavailiableBasket .basket__typography_red, .unavailiableBasket .basket__changeAmountBtns {
+  display: none;
+}
+
+.unavailiableBasket .basket__price {
+  visibility: hidden;
+}
+
+.unavailiableBasket .basket__box1 {
+  align-items: flex-start;
+}
+
 /* Accordion */
 .accordionBody {
   padding-top: 11px;
-  padding-bottom: 16px;
 }
 
 .accordionHeader {
@@ -579,6 +621,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: 100px;
 }
 
 .basket__changeAmountBtns {
@@ -598,4 +641,181 @@ button:hover {
   justify-content: flex-end;
   gap: 16px;
 }
+
+/* Delivery */
+
+.basket__delivery {
+  background: #FFF;
+  padding: 16px 24px 24px;
+  border-radius: 16px;
+
+}
+
+.delivery__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn__delivery_pink {
+  color:  #CB11AB;
+  text-align: right;
+  font-family: Segoe UI;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.delivery__descriptions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 0 24px;
+}
+
+.delivery__typography_subheader {
+  color:  #000;
+  font-family: Segoe UI;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; 
+  width: 153px;
+}
+
+.delivery__pickUpPoint {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.pickUpAddress__stars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.pickUpAddress__schedule, .listOfDeleliveries__list {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.delivery__cost, .delivery__deliveryItem {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+.delivery__listOfDeleliveries {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.listOfDeleliveries__item {
+  position: relative;
+}
+
+.listOfDeleliveries__counter {
+  position: absolute;
+  right: -5px;
+  top: -10px;
+  color: #FFF;
+  font-family: Segoe UI;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  background: #F55123;
+  border-radius: 16px;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+}
+
+/* Delivery refund */
+
+.delivery__refund {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.typography_green {
+  color: #0CB477;
+}
+
+
+
+/* payment */
+
+.payment, .customer {
+  display: flex;
+  padding: 16px 24px 24px 24px;
+  flex-direction: column;
+  border-radius: 16px;
+  background:  #FFF;
+}
+
+.payment__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.payment__info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 8px;
+}
+
+/* Customer */
+
+.customer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.customer__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+
+/* Footer */
+
+footer {
+  padding: 24px;
+  background: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__typography {
+  color: rgba(255, 255, 255, 0.70);
+  font-family: Segoe UI;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; 
+}
+
+
+
+
 
