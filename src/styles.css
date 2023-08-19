@@ -917,7 +917,7 @@ footer {
   }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 1000px) {
   html {
     overflow-x: hidden;
   }
