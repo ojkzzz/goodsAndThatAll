@@ -1,3 +1,14 @@
+@font-face {
+  font-family: Segoe UI;
+  src: url("./assets/fonts/Segoe_UI/Segoe\ UI.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: Segoe UI;
+  src: url("./assets/fonts/Segoe_UI/Segoe\ UI\ Bold.ttf");
+  font-weight: 700;
+}
+
 /* Common styles */
 
 html,
@@ -31,28 +42,26 @@ button {
 
 .textField_standard {
   border: unset;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 3px;
   min-width: 100px;
 
-  color:  #000;
+  color: #000;
   font-family: Segoe UI;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
-
 }
 
 .textField_standard::placeholder {
-  color:  #A0A0A4;
+  color: #a0a0a4;
   font-family: Segoe UI;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
 }
-
 
 .prevent-select {
   /* prevent selecting */
@@ -76,7 +85,7 @@ button {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  gap: 8px;  
+  gap: 8px;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
@@ -115,9 +124,8 @@ button {
 
 /* When the checkbox is checked, add a blue background */
 .checkboxContainer input:checked ~ .checkmark {
-  background-color: #CB11AB;
-  border-color: #CB11AB;
-
+  background-color: #cb11ab;
+  border-color: #cb11ab;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -144,7 +152,6 @@ button {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-
 
 /* header styles */
 
@@ -290,7 +297,7 @@ button:hover {
   flex-direction: row;
   justify-content: space-between;
   border-radius: 24px;
-  background-color: #F6F6FA;
+  background-color: #f6f6fa;
   padding: 24px;
   gap: 32px;
 }
@@ -452,7 +459,6 @@ button:hover {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-
 /* basket */
 
 .goods__leftSide {
@@ -506,17 +512,17 @@ button:hover {
 }
 
 .basket__typography_grey {
-  color: #A0A0A4;
+  color: #a0a0a4;
 }
 
 .basket__typography_discount {
-  color: #A0A0A4;
+  color: #a0a0a4;
   font-family: Segoe UI;
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
   line-height: 16px;
-  border-bottom: 1px dashed #A0A0A4;
+  border-bottom: 1px dashed #a0a0a4;
   width: fit-content;
   margin-left: auto;
   text-decoration: line-through;
@@ -529,6 +535,11 @@ button:hover {
   width: 397px;
 }
 
+.basket__box1_mobile,
+.basket__box2_mobile {
+  display: none;
+}
+
 .basket__box2 {
   display: flex;
   flex-direction: row;
@@ -537,10 +548,8 @@ button:hover {
 }
 
 .basket__typography_red {
-  color: #FF3B30;
+  color: #ff3b30;
 }
-
-
 
 .basket__typography_bold {
   color: #000;
@@ -606,7 +615,7 @@ button:hover {
 /* unavailiableBasket */
 
 .unavailiableBasketTypography {
-  color:  #000;
+  color: #000;
   font-family: Segoe UI;
   font-size: 16px;
   font-style: normal;
@@ -623,14 +632,18 @@ button:hover {
 }
 
 .unavailiableBasket .basket__img {
-  filter: grayscale(100%)
+  filter: grayscale(100%);
 }
 
-.unavailiableBasket .basket__goodsName, .unavailiableBasket .basket__typography_small {
-  color: #A0A0A4;
+.unavailiableBasket .basket__goodsName,
+.unavailiableBasket .basket__typography_small {
+  color: #a0a0a4;
 }
 
-.unavailiableBasket .basket__typography_grey, .unavailiableBasket .basket__stock, .unavailiableBasket .basket__typography_red, .unavailiableBasket .basket__changeAmountBtns {
+.unavailiableBasket .basket__typography_grey,
+.unavailiableBasket .basket__stock,
+.unavailiableBasket .basket__typography_red,
+.unavailiableBasket .basket__changeAmountBtns {
   display: none;
 }
 
@@ -649,7 +662,7 @@ button:hover {
 
 .accordionHeader {
   padding-bottom: 16px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -686,10 +699,9 @@ button:hover {
 /* Delivery */
 
 .basket__delivery {
-  background: #FFF;
+  background: #fff;
   padding: 16px 24px 24px;
   border-radius: 16px;
-
 }
 
 .delivery__header {
@@ -700,7 +712,7 @@ button:hover {
 }
 
 .btn__delivery_pink {
-  color:  #CB11AB;
+  color: #cb11ab;
   text-align: right;
   font-family: Segoe UI;
   font-size: 16px;
@@ -717,12 +729,12 @@ button:hover {
 }
 
 .delivery__typography_subheader {
-  color:  #000;
+  color: #000;
   font-family: Segoe UI;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: 24px; 
+  line-height: 24px;
   width: 153px;
 }
 
@@ -740,13 +752,15 @@ button:hover {
   gap: 5px;
 }
 
-.pickUpAddress__schedule, .listOfDeleliveries__list {
+.pickUpAddress__schedule,
+.listOfDeleliveries__list {
   display: flex;
   flex-direction: row;
   gap: 8px;
 }
 
-.delivery__cost, .delivery__deliveryItem {
+.delivery__cost,
+.delivery__deliveryItem {
   display: flex;
   flex-direction: row;
   gap: 32px;
@@ -766,13 +780,13 @@ button:hover {
   position: absolute;
   right: -5px;
   top: -10px;
-  color: #FFF;
+  color: #fff;
   font-family: Segoe UI;
   font-size: 10px;
   font-style: normal;
   font-weight: 600;
   line-height: 18px;
-  background: #F55123;
+  background: #f55123;
   border-radius: 16px;
   width: 18px;
   height: 18px;
@@ -789,19 +803,18 @@ button:hover {
 }
 
 .typography_green {
-  color: #0CB477;
+  color: #0cb477;
 }
-
-
 
 /* payment */
 
-.payment, .customer {
+.payment,
+.customer {
   display: flex;
   padding: 16px 24px 24px 24px;
   flex-direction: column;
   border-radius: 16px;
-  background:  #FFF;
+  background: #fff;
 }
 
 .payment__header {
@@ -834,13 +847,15 @@ button:hover {
   align-items: center;
 }
 
-.customer__fio, .customer__additionInfo {
+.customer__fio,
+.customer__additionInfo {
   display: flex;
   flex-direction: row;
   gap: 24px;
 }
 
-.customer__fio .textField_standard, .customer__additionInfo .textField_standard{
+.customer__fio .textField_standard,
+.customer__additionInfo .textField_standard {
   flex-grow: 1;
 }
 
@@ -849,8 +864,8 @@ button:hover {
 }
 
 .textField__customerInn::after {
-  content: 'Для таможенного оформления';
-  color:  #000;
+  content: "Для таможенного оформления";
+  color: #000;
   font-family: Segoe UI;
   font-size: 12px;
   font-style: normal;
@@ -860,8 +875,6 @@ button:hover {
   left: 3px;
   bottom: -15px;
 }
-
-
 
 /* Footer */
 
@@ -875,14 +888,13 @@ footer {
 }
 
 .footer__typography {
-  color: rgba(255, 255, 255, 0.70);
+  color: rgba(255, 255, 255, 0.7);
   font-family: Segoe UI;
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
-  line-height: 16px; 
+  line-height: 16px;
 }
-
 
 /* Media */
 
@@ -894,16 +906,21 @@ footer {
     width: 898px;
   }
   .header__nav {
-    gap: 50px
+    gap: 50px;
   }
   .aside {
-    width: 449px
+    width: 449px;
   }
 }
 
 @media (max-width: 320px) {
+  html {
+    overflow-x: hidden;
+  }
   .header {
     padding: 11px 13px;
+    justify-content: space-between;
+    height: 56px;
   }
   .header__btn {
     border: unset;
@@ -917,6 +934,8 @@ footer {
   }
   .header__brandName {
     margin-right: 16px;
+    position: relative;
+    bottom: 7px;
   }
   .header__searchInputBox {
     display: none;
@@ -949,7 +968,3 @@ footer {
     gap: 5px;
   }
 }
-
-
-
-
