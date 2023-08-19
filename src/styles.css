@@ -917,7 +917,7 @@ footer {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 440px) {
   html {
     overflow-x: hidden;
   }
@@ -1032,13 +1032,87 @@ footer {
   }
   .basket__goodsName {
     width: 190px;
-    max-height: 40px;
-    text-overflow: ellipsis;
+    max-height: 48px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .basket__goodsItem_moble .basket__goodsName {
+    font-size: 14px;
+    line-height: 20px;
   }
   .unavailiableBasket .basket__price {
     display: none;
   }
   .unavailiableBasket .basket__btns {
     flex-direction: row-reverse;
+  }
+  .basket__delivery,
+  .payment,
+  .customer,
+  .aside {
+    width: calc(100% + 48px);
+    transform: translateX(-24px);
+  }
+  .aside {
+    box-shadow: unset;
+    border-radius: unset;
+    background: unset;
+    padding: 16px 24px;
+  }
+  .aside__refund,
+  .aside__paymentAdditional {
+    background: #f0ecf4;
+  }
+  .aside__delivery,
+  .aside__paymentHeader,
+  .aside__paymentInfo {
+    display: none;
+  }
+  .aside__basketInfo,
+  .aside__refund {
+    margin-bottom: 16px;
+  }
+  .aside__usualTypography_header {
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.2px;
+  }
+  .delivery__header {
+    align-items: baseline;
+  }
+  .delivery__pickUpPoint {
+    flex-direction: column;
+    gap: unset;
+  }
+  .delivery__descriptions {
+    padding-top: 8px;
+  }
+  .basket__typography_big {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .pickUpAddress__schedule {
+    margin-top: 4px;
+  }
+  .delivery__cost {
+    flex-direction: column;
+    gap: unset;
+  }
+  .delivery__deliveryItem {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .payment__header {
+    align-items: baseline;
+  }
+  .customer__fio,
+  .customer__additionInfo {
+    flex-direction: column;
+    gap: 16px;
+  }
+  #customerInn {
+    width: 100%;
   }
 }
