@@ -20,10 +20,39 @@ svg {
   padding: 0;
 }
 
+*:focus {
+  outline: none;
+}
+
 button {
   background-color: transparent;
   border: unset;
 }
+
+.textField_standard {
+  border: unset;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+  padding: 3px;
+  min-width: 100px;
+
+  color:  #000;
+  font-family: Segoe UI;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+
+}
+
+.textField_standard::placeholder {
+  color:  #A0A0A4;
+  font-family: Segoe UI;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
 
 .prevent-select {
   /* prevent selecting */
@@ -152,6 +181,7 @@ button:hover {
   letter-spacing: 0.56px;
   margin: 0;
   margin-right: 32px;
+  white-space: nowrap;
 }
 
 .header__searchInputBox {
@@ -249,16 +279,20 @@ button:hover {
   line-height: 18px;
 }
 
+.header__searchBtn {
+  display: none;
+}
+
 /* main block styles */
 
 .goods {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* height: calc(100% - 88px); */
   border-radius: 24px;
   background-color: #F6F6FA;
   padding: 24px;
+  gap: 32px;
 }
 
 /* aside panel styles */
@@ -493,6 +527,13 @@ button:hover {
   flex-direction: row;
   align-items: center;
   width: 397px;
+}
+
+.basket__box2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
 }
 
 .basket__typography_red {
@@ -793,6 +834,33 @@ button:hover {
   align-items: center;
 }
 
+.customer__fio, .customer__additionInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.customer__fio .textField_standard, .customer__additionInfo .textField_standard{
+  flex-grow: 1;
+}
+
+.textField__customerInn {
+  position: relative;
+}
+
+.textField__customerInn::after {
+  content: 'Для таможенного оформления';
+  color:  #000;
+  font-family: Segoe UI;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  position: absolute;
+  left: 3px;
+  bottom: -15px;
+}
+
 
 
 /* Footer */
@@ -815,6 +883,72 @@ footer {
   line-height: 16px; 
 }
 
+
+/* Media */
+
+@media screen and (min-width: 1440px) {
+  .header__searchInputBox {
+    width: 970px;
+  }
+  .header__searchInput {
+    width: 898px;
+  }
+  .header__nav {
+    gap: 50px
+  }
+  .aside {
+    width: 449px
+  }
+}
+
+@media (max-width: 320px) {
+  .header {
+    padding: 11px 13px;
+  }
+  .header__btn {
+    border: unset;
+    padding: 0;
+  }
+  br {
+    display: none;
+  }
+  .header__nav {
+    display: none;
+  }
+  .header__brandName {
+    margin-right: 16px;
+  }
+  .header__searchInputBox {
+    display: none;
+  }
+  .header__searchBtn {
+    display: block;
+  }
+  .goods {
+    flex-direction: column;
+  }
+  .goods__leftSide {
+    width: 100%;
+  }
+  .basket__checkboxAndImg {
+    position: relative;
+  }
+  .basket__checkboxContainer {
+    position: absolute;
+    left: 3px;
+    top: 3px;
+  }
+  .basket__goodsItem {
+    flex-direction: column;
+  }
+  .basket__price {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    align-items: center;
+    gap: 5px;
+  }
+}
 
 
 
