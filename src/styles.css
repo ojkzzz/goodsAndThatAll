@@ -1,11 +1,11 @@
 @font-face {
   font-family: Segoe UI;
-  src: url("./assets/fonts/Segoe_UI/Segoe\ UI.ttf");
+  src: url('./assets/fonts/Segoe_UI/Segoe\ UI.ttf');
   font-weight: 400;
 }
 @font-face {
   font-family: Segoe UI;
-  src: url("./assets/fonts/Segoe_UI/Segoe\ UI\ Bold.ttf");
+  src: url('./assets/fonts/Segoe_UI/Segoe\ UI\ Bold.ttf');
   font-weight: 700;
 }
 
@@ -130,7 +130,7 @@ button {
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
-  content: "";
+  content: '';
   position: absolute;
   display: none;
 }
@@ -311,7 +311,8 @@ button:hover {
   top: 22px; */
   height: fit-content;
   padding: 16px 24px 24px 24px;
-  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.3),
+  box-shadow:
+    0px 0px 1px 0px rgba(0, 0, 0, 0.3),
     0px 2px 10px 0px rgba(0, 0, 0, 0.15);
   border-radius: 16px;
   background-color: #fff;
@@ -600,6 +601,13 @@ button:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 12px;
+}
+
+.basket__goodsItem_moble {
+  display: none;
+  padding-top: 12px;
 }
 
 .basket__checkboxAndImg {
@@ -656,13 +664,9 @@ button:hover {
 }
 
 /* Accordion */
-.accordionBody {
-  padding-top: 11px;
-}
 
 .accordionHeader {
   padding-bottom: 16px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -864,7 +868,7 @@ button:hover {
 }
 
 .textField__customerInn::after {
-  content: "Для таможенного оформления";
+  content: 'Для таможенного оформления';
   color: #000;
   font-family: Segoe UI;
   font-size: 12px;
@@ -949,13 +953,23 @@ footer {
   .goods__leftSide {
     width: 100%;
   }
+
+  .basket__goodsItem_moble {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .basket__goodsItem {
+    display: none;
+  }
+
   .basket__checkboxAndImg {
     position: relative;
   }
   .basket__checkboxContainer {
     position: absolute;
-    left: 3px;
-    top: 3px;
+    left: 4px;
+    top: 4px;
   }
   .basket__goodsItem {
     flex-direction: column;
@@ -964,7 +978,67 @@ footer {
     display: flex;
     flex-direction: row;
     width: fit-content;
-    align-items: center;
+    align-items: baseline;
     gap: 5px;
+  }
+  .basket__itemSize {
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    background: #fff;
+    min-width: 22px;
+    max-width: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 22px;
+    border-radius: 6px;
+    font-family: Segoe UI;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+  }
+  .basket__typography_bold {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+  }
+  .basket__typography_big {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  .basket__box1 {
+    width: auto;
+    align-items: flex-start;
+  }
+
+  .basket__btns {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    margin-top: 16px;
+  }
+  .basket__changeAmountBtns {
+    width: 80px;
+  }
+  .basket__img {
+    width: 80px;
+    height: 106px;
+  }
+  .basket__goodsName {
+    width: 190px;
+    max-height: 40px;
+    text-overflow: ellipsis;
+  }
+  .unavailiableBasket .basket__price {
+    display: none;
+  }
+  .unavailiableBasket .basket__btns {
+    flex-direction: row-reverse;
   }
 }
