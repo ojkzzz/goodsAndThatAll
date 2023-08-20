@@ -152,7 +152,7 @@
               <label
                 class="checkboxContainer usualTypography basket__typography_big flexEnd"
                 >Выбрать все
-                <input type="checkbox" checked />
+                <input type="checkbox" id="checkAll" />
                 <span class="checkmark"></span>
               </label>
               <button>
@@ -179,7 +179,7 @@
                 <div class="basket__box1">
                   <div class="basket__checkboxAndImg">
                     <label class="checkboxContainer basket__checkboxContainer">
-                      <input type="checkbox" checked />
+                      <input type="checkbox" id="firstItem" />
                       <span class="checkmark"></span>
                     </label>
                     <p
@@ -303,7 +303,7 @@
                 <div class="basket__box1">
                   <div class="basket__checkboxAndImg">
                     <label class="checkboxContainer basket__checkboxContainer">
-                      <input type="checkbox" checked />
+                      <input type="checkbox" id="firstMobileItem" />
                       <span class="checkmark"></span>
                     </label>
                     <img
@@ -405,7 +405,7 @@
                 <div class="basket__box1">
                   <div class="basket__checkboxAndImg">
                     <label class="checkboxContainer basket__checkboxContainer">
-                      <input type="checkbox" checked />
+                      <input type="checkbox" id="secondItem" />
                       <span class="checkmark"></span>
                     </label>
                     <img
@@ -516,9 +516,9 @@
                     <p
                       class="basket__typography_bold basket__typography_boldSmall"
                     >
-                      2 100 047 сом
+                      2 100 047 сом
                     </p>
-                    <p class="basket__typography_discount">2 300 047 сом</p>
+                    <p class="basket__typography_discount">2 300 047 сом</p>
                   </div>
                 </div>
               </div>
@@ -528,7 +528,7 @@
                 <div class="basket__box1">
                   <div class="basket__checkboxAndImg">
                     <label class="checkboxContainer basket__checkboxContainer">
-                      <input type="checkbox" checked />
+                      <input type="checkbox" id="secondMobileItem" />
                       <span class="checkmark"></span>
                     </label>
                     <img
@@ -541,8 +541,8 @@
 
                   <div class="basket__description">
                     <div class="basket__price">
-                      <p class="basket__typography_bold">2 100 047сом</p>
-                      <p class="basket__typography_discount">2 300 047 сом</p>
+                      <p class="basket__typography_bold">2 100 047сом</p>
+                      <p class="basket__typography_discount">2 300 047 сом</p>
                     </div>
                     <p
                       class="usualTypography basket__typography_big basket__goodsName"
@@ -631,7 +631,7 @@
                 <div class="basket__box1">
                   <div class="basket__checkboxAndImg">
                     <label class="checkboxContainer basket__checkboxContainer">
-                      <input type="checkbox" checked />
+                      <input type="checkbox" id="thirdItem" />
                       <span class="checkmark"></span>
                     </label>
                     <img
@@ -754,7 +754,7 @@
                 <div class="basket__box1">
                   <div class="basket__checkboxAndImg">
                     <label class="checkboxContainer basket__checkboxContainer">
-                      <input type="checkbox" checked />
+                      <input type="checkbox" id="thirdMobileItem" />
                       <span class="checkmark"></span>
                     </label>
                     <img
@@ -864,7 +864,7 @@
               <label
                 class="checkboxContainer usualTypography basket__typography_big flexEnd"
                 >Выбрать все
-                <input type="checkbox" />
+                <input type="checkbox" id="checkAll" />
                 <span class="checkmark"></span>
               </label>
               <p
@@ -1020,7 +1020,7 @@
                 <div class="basket__box1">
                   <div class="basket__checkboxAndImg">
                     <label class="checkboxContainer basket__checkboxContainer">
-                      <input type="checkbox" checked />
+                      <input type="checkbox" />
                       <span class="checkmark"></span>
                     </label>
                     <img
@@ -1232,9 +1232,9 @@
                     <p
                       class="basket__typography_bold basket__typography_boldSmall"
                     >
-                      2 100 047 сом
+                      2 100 047 сом
                     </p>
-                    <p class="basket__typography_discount">2 300 047 сом</p>
+                    <p class="basket__typography_discount">2 300 047 сом</p>
                   </div>
                 </div>
               </div>
@@ -1246,7 +1246,7 @@
                 <div class="basket__box1">
                   <div class="basket__checkboxAndImg">
                     <label class="checkboxContainer basket__checkboxContainer">
-                      <input type="checkbox" checked />
+                      <input type="checkbox" />
                       <span class="checkmark"></span>
                     </label>
                     <img
@@ -1259,8 +1259,8 @@
 
                   <div class="basket__description">
                     <div class="basket__price">
-                      <p class="basket__typography_bold">2 100 047сом</p>
-                      <p class="basket__typography_discount">2 300 047 сом</p>
+                      <p class="basket__typography_bold">2 100 047сом</p>
+                      <p class="basket__typography_discount">2 300 047 сом</p>
                     </div>
                     <p
                       class="usualTypography basket__typography_big basket__goodsName"
@@ -1471,7 +1471,7 @@
                 <div class="basket__box1">
                   <div class="basket__checkboxAndImg">
                     <label class="checkboxContainer basket__checkboxContainer">
-                      <input type="checkbox" checked />
+                      <input type="checkbox" />
                       <span class="checkmark"></span>
                     </label>
                     <img
@@ -1571,6 +1571,8 @@
           </div>
           <!-- Accordion end  -->
         </div>
+
+        <!-- unavailiableBasket -->
 
         <!-- Delivery -->
 
@@ -1851,7 +1853,7 @@
           </div>
           <div class="aside__orderInfo">
             <p class="usualTypography">Скидка</p>
-            <p class="usualTypography" id="discount">−200 985 сом</p>
+            <p class="usualTypography" id="discount">−200 985 сом</p>
           </div>
           <div class="aside__orderInfo">
             <p class="usualTypography">Доставка</p>
@@ -2040,7 +2042,7 @@
               <label
                 class="checkboxContainer usualTypography aside__usualTypography_small"
                 >Списать оплату сразу
-                <input type="checkbox" />
+                <input type="checkbox" id="instantPaymet" />
                 <span class="checkmark"></span>
               </label>
             </div>

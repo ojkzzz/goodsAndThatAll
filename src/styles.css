@@ -110,6 +110,9 @@ button {
   width: 22px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
+  transition:
+    border-color,
+    background-color 0.2s;
 }
 
 /* On mouse-over, add a grey background color */
@@ -266,7 +269,7 @@ button:hover {
 }
 
 .header__basketCounter {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   width: 16px;
@@ -618,6 +621,14 @@ button:hover {
 
 .flexEnd {
   justify-content: flex-end;
+}
+
+.basket__additionalBtns .btn path {
+  transition: fill 0.2s;
+}
+
+.basket__additionalBtns .btn:hover path {
+  fill: #f55123;
 }
 
 /* unavailiableBasket */
