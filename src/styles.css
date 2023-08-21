@@ -1,11 +1,11 @@
 @font-face {
   font-family: Segoe UI;
-  src: url('./assets/fonts/Segoe_UI/Segoe\ UI.ttf');
+  src: url('./assets/fonts/SegoeUI/SegoeUI.ttf');
   font-weight: 400;
 }
 @font-face {
   font-family: Segoe UI;
-  src: url('./assets/fonts/Segoe_UI/Segoe\ UI\ Bold.ttf');
+  src: url('./assets/fonts/SegoeUI/SegoeUI-Bold.ttf');
   font-weight: 700;
 }
 
@@ -309,9 +309,6 @@ button:hover {
 
 .aside {
   width: 300px;
-  /* position: absolute;
-  right: 24px;
-  top: 22px; */
   height: fit-content;
   padding: 16px 24px 24px 24px;
   box-shadow:
@@ -329,6 +326,7 @@ button:hover {
   font-weight: 700;
   line-height: 32px;
   letter-spacing: -0.24px;
+  text-align: end;
 }
 .aside__usualTypography_headerSmall {
   font-size: 16px;
@@ -347,6 +345,10 @@ button:hover {
   align-items: center;
   width: 100%;
   margin-bottom: 8px;
+}
+
+.aside__header p:nth-child(2) {
+  white-space: nowrap;
 }
 
 .aside__orderInfo,
@@ -587,6 +589,12 @@ button:hover {
 .basket__price {
   width: 110px;
 }
+.basket__price_mobile {
+  display: none;
+}
+.basket__size_mobile {
+  display: none;
+}
 
 .basket__goodsName {
   margin-bottom: 8px;
@@ -617,6 +625,7 @@ button:hover {
   display: flex;
   flex-direction: row;
   align-self: flex-start;
+  position: relative;
 }
 
 .flexEnd {
@@ -791,6 +800,11 @@ button:hover {
   position: relative;
 }
 
+.listOfDeleliveries__item img {
+  width: 40px;
+  height: 56px;
+}
+
 .listOfDeleliveries__counter {
   position: absolute;
   right: -5px;
@@ -960,9 +974,14 @@ footer {
   }
   .goods {
     flex-direction: column;
+    padding: 16px;
   }
   .goods__leftSide {
     width: 100%;
+  }
+
+  .basket__headerTypography {
+    margin-bottom: 16px;
   }
 
   .basket__goodsItem_moble {
@@ -970,9 +989,9 @@ footer {
     flex-direction: column;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
-  .basket__goodsItem {
+  /* .basket__goodsItem {
     display: none;
-  }
+  } */
 
   .basket__checkboxAndImg {
     position: relative;
@@ -986,6 +1005,9 @@ footer {
     flex-direction: column;
   }
   .basket__price {
+    display: none;
+  }
+  .basket__price_mobile {
     display: flex;
     flex-direction: row;
     width: fit-content;
@@ -1024,6 +1046,7 @@ footer {
   .basket__box1 {
     width: auto;
     align-items: flex-start;
+    position: relative;
   }
 
   .basket__btns {
@@ -1032,10 +1055,11 @@ footer {
     justify-content: space-between;
     gap: 16px;
     width: 100%;
-    margin-top: 16px;
+    margin-top: 12px;
   }
   .basket__changeAmountBtns {
     width: 80px;
+    height: 32px;
   }
   .basket__img {
     width: 80px;
@@ -1049,7 +1073,37 @@ footer {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
   }
-  .basket__goodsItem_moble .basket__goodsName {
+
+  .basket__descriptionSize p:nth-child(2) {
+    display: none;
+  }
+  .basket__size_mobile {
+    min-width: 22px;
+    max-width: 72px;
+    height: 22px;
+    display: block;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    background: #fff;
+    border-radius: 6px;
+    color: #000;
+    font-family: Segoe UI;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .basket__stock {
+    display: none;
+  }
+  .accordionBody .basket__goodsName {
     font-size: 14px;
     line-height: 20px;
   }
@@ -1063,8 +1117,10 @@ footer {
   .payment,
   .customer,
   .aside {
-    width: calc(100% + 48px);
-    transform: translateX(-24px);
+    width: calc(100% + 32px);
+    padding: 16px;
+    padding-bottom: 24px;
+    transform: translateX(-16px);
   }
   .aside {
     box-shadow: unset;
@@ -1093,6 +1149,7 @@ footer {
   .delivery__header {
     align-items: baseline;
   }
+
   .delivery__pickUpPoint {
     flex-direction: column;
     gap: unset;
