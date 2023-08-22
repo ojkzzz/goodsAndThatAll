@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: Segoe UI;
   src: url('./assets/fonts/SegoeUI/SegoeUI.ttf');
   font-weight: 400;
@@ -7,6 +7,75 @@
   font-family: Segoe UI;
   src: url('./assets/fonts/SegoeUI/SegoeUI-Bold.ttf');
   font-weight: 700;
+} */
+
+@font-face {
+  font-family: 'Segoe UI';
+  src: url('../src/assets/fonts/SegoeUI/SegoeUI-Light.eot');
+  src:
+    local('../src/assets/fonts/SegoeUI/Segoe UI Light'),
+    local('../src/assets/fonts/SegoeUI/SegoeUI-Light'),
+    url('../src/assets/fonts/SegoeUI/SegoeUI-Light.eot?#iefix')
+      format('embedded-opentype'),
+    url('../src/assets/fonts/SegoeUI/SegoeUI-Light.woff') format('woff'),
+    url('../src/assets/fonts/SegoeUI/SegoeUI-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI';
+  src: url('../src/assets/fonts/SegoeUI/SegoeUI-Bold.eot');
+  src:
+    local('../src/assets/fonts/SegoeUI/Segoe UI Semibold'),
+    local('../src/assets/fonts/SegoeUI/SegoeUI-SemiBold'),
+    url('../src/assets/fonts/SegoeUI/SegoeUI-SemiBold.eot?#iefix')
+      format('embedded-opentype'),
+    url('../src/assets/fonts/SegoeUI/SegoeUI-SemiBold.woff') format('woff'),
+    url('../src/assets/fonts/SegoeUI/SegoeUI-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Segoe UI';
+  src: url('../src/assets/fonts/SegoeUI/SegoeUI-Bold.eot');
+  src:
+    local('../src/assets/fonts/SegoeUI/Segoe UI Semibold'),
+    local('../src/assets/fonts/SegoeUI/SegoeUI-SemiBold'),
+    url('../src/assets/fonts/SegoeUI/SegoeUI-SemiBold.eot?#iefix')
+      format('embedded-opentype'),
+    url('../src/assets/fonts/SegoeUI/SegoeUI-SemiBold.woff') format('woff'),
+    url('../src/assets/fonts/SegoeUI/SegoeUI-SemiBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI';
+  src: url('../src/assets/fonts/SegoeUI/SegoeUI.eot');
+  src:
+    local('../src/assets/fonts/SegoeUI/Segoe UI'),
+    local('../src/assets/fonts/SegoeUI/SegoeUI'),
+    url('../src/assets/fonts/SegoeUI/SegoeUI.eot?#iefix')
+      format('embedded-opentype'),
+    url('../src/assets/fonts/SegoeUI/SegoeUI.woff') format('woff'),
+    url('../src/assets/fonts/SegoeUI/SegoeUI.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI';
+  src: url('../src/assets/fonts/SegoeUI/SegoeUI-Bold.eot');
+  src:
+    local('../src/assets/fonts/SegoeUI/Segoe UI Bold'),
+    local('../src/assets/fonts/SegoeUI/SegoeUI-Bold'),
+    url('../src/assets/fonts/SegoeUI/SegoeUI-Bold.eot?#iefix')
+      format('embedded-opentype'),
+    url('../src/assets/fonts/SegoeUI/SegoeUI-Bold.woff') format('woff'),
+    url('../src/assets/fonts/SegoeUI/SegoeUI-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
 }
 
 /* Common styles */
@@ -100,6 +169,54 @@ button {
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.tooltip {
+  position: absolute;
+  top: 25px;
+  left: 5px;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 8px;
+  width: 280px;
+  z-index: 100;
+  box-shadow:
+    0px 0px 1px 0px rgba(0, 0, 0, 0.3),
+    0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+}
+.tooltipIcon:hover {
+  cursor: pointer;
+}
+
+.tooltipIcon:hover ~ .tooltip {
+  display: flex;
+}
+
+.accordionBody {
+  transition: all 0.1s;
+}
+.unexpanded .accordionHeader {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordionHeader button {
+  transition: transform 0.3s;
+}
+
+.unexpanded .accordionHeader button {
+  transform: rotate(180deg);
+}
+
+.unexpanded .accordionBody {
+  position: absolute;
+  bottom: 5000px;
 }
 
 /* Custom checkbox */
@@ -411,10 +528,25 @@ button:hover {
   background: #f6f6fa;
   border-radius: 8px;
   margin-bottom: 24px;
+  position: relative;
 }
 
 .aside__usualTypography_green {
   color: #0cb477;
+}
+
+.freeRefund:hover {
+  cursor: pointer;
+}
+.freeRefund:hover ~ .tooltip {
+  display: flex;
+  top: 50px;
+  padding: 10px 16px 14px;
+  left: -10px;
+}
+
+.delivery__refund:hover ~ .tooltip {
+  right: 0;
 }
 
 .aside__payment {
@@ -556,6 +688,14 @@ button:hover {
   margin-left: auto;
   text-decoration: line-through;
 }
+.basket__typography_discount:hover {
+  cursor: pointer;
+}
+.basket__typography_discount:hover ~ .tooltip {
+  display: flex;
+  top: 50px;
+  left: -125px;
+}
 
 .basket__box1 {
   display: flex;
@@ -611,6 +751,15 @@ button:hover {
 
 .basket__price {
   width: 110px;
+  position: relative;
+}
+.basket__price .tooltip div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.basket__price .tooltip {
+  width: 250px;
 }
 .basket__price_mobile {
   display: none;
@@ -629,6 +778,7 @@ button:hover {
   flex-direction: row;
   align-items: center;
   gap: 6px;
+  position: relative;
 }
 
 .basket__goodsItem {
@@ -853,6 +1003,9 @@ button:hover {
   align-items: center;
   gap: 8px;
 }
+.freeRefund {
+  position: relative;
+}
 
 .typography_green {
   color: #0cb477;
@@ -905,7 +1058,6 @@ button:hover {
   flex-direction: row;
   gap: 24px;
   margin-top: 7px;
-  padding-bottom: 7px;
 }
 
 .customerName,
@@ -1058,9 +1210,6 @@ footer {
     flex-direction: column;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
-  /* .basket__goodsItem {
-    display: none;
-  } */
 
   .basket__checkboxAndImg {
     position: relative;
@@ -1248,8 +1397,33 @@ footer {
   .customer__additionInfo {
     flex-direction: column;
     gap: 16px;
+    margin-top: 0;
   }
   #customerInn {
     width: 100%;
+  }
+
+  .customerName,
+  .customerLname,
+  .customerMail,
+  .customerPhone,
+  .customerInn {
+    padding: 13px 0 16px;
+  }
+
+  .customerInn::after {
+    bottom: 0;
+  }
+
+  .customerName__error.customerName::after,
+  .customerLname__error.customerLname::after,
+  .customerMail__error.customerMail::after,
+  .customerPhone__error.customerPhone::after,
+  .customerInn__error.customerInn::after {
+    bottom: 0;
+  }
+
+  .textField_standard ~ label {
+    top: 13px;
   }
 }
