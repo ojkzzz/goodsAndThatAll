@@ -436,4 +436,189 @@ const getSrc = (id) => {
   }
 };
 
+//initial render
 updateDeliveryList('5—6 февраля', orderList);
+
+//Работа с инпутами
+//Можно было бы вытянуть все инпуты данного типа и пройтись циклом, повесим один и тот же код, но валидация в разных полях будет разной, потому оставлю пока эту толщу кода здесь
+const regName = /^[A-Za-zА-ЯЁа-яё' -]+$/;
+const regEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const regPhone = /^\+\d \d{3} \d{3} \d{2} \d{2}$/;
+
+//name
+const customerName = document.querySelector('.customerName');
+const customerName_input = customerName.querySelector('input');
+const customerName_label = customerName.querySelector('label');
+
+customerName_input.addEventListener('input', (e) => {
+  if (regName.test(e.target.value) || e.target.value.trim() === '') {
+    customerName.classList.remove('customerName__error');
+  }
+});
+customerName_input.addEventListener('focus', () => {
+  customerName_label.style.top = '-10px';
+  customerName_label.style.fontSize = '13px';
+  customerName_label.style.lineHeight = '16px';
+});
+customerName_input.addEventListener('blur', (e) => {
+  if (!e.target.value) {
+    customerName_label.style.top = '3px';
+    customerName_label.style.fontSize = '16px';
+    customerName_label.style.lineHeight = '24px';
+  }
+  if (!regName.test(e.target.value) && e.target.value.trim() !== '')
+    customerName.classList.add('customerName__error');
+});
+
+//lname
+const customerLname = document.querySelector('.customerLname');
+const customerLname_input = customerLname.querySelector('input');
+const customerLname_label = customerLname.querySelector('label');
+
+customerLname_input.addEventListener('input', (e) => {
+  if (regName.test(e.target.value) || e.target.value.trim() === '') {
+    customerLname.classList.remove('customerLname__error');
+  }
+});
+customerLname_input.addEventListener('focus', () => {
+  customerLname_label.style.top = '-10px';
+  customerLname_label.style.fontSize = '13px';
+  customerLname_label.style.lineHeight = '16px';
+});
+customerLname_input.addEventListener('blur', (e) => {
+  if (!e.target.value) {
+    customerLname_label.style.top = '3px';
+    customerLname_label.style.fontSize = '16px';
+    customerLname_label.style.lineHeight = '24px';
+  }
+  if (!regName.test(e.target.value) && e.target.value.trim() !== '') {
+    customerLname.classList.add('customerLname__error');
+  }
+});
+
+//mail
+const customerMail = document.querySelector('.customerMail');
+const customerMail_input = customerMail.querySelector('input');
+const customerMail_label = customerMail.querySelector('label');
+
+customerMail_input.addEventListener('input', (e) => {
+  if (regEmail.test(e.target.value)) {
+    customerMail.classList.remove('customerMail__error');
+  }
+});
+customerMail_input.addEventListener('focus', () => {
+  customerMail_label.style.top = '-10px';
+  customerMail_label.style.fontSize = '13px';
+  customerMail_label.style.lineHeight = '16px';
+});
+customerMail_input.addEventListener('blur', (e) => {
+  if (!e.target.value) {
+    customerMail_label.style.top = '3px';
+    customerMail_label.style.fontSize = '16px';
+    customerMail_label.style.lineHeight = '24px';
+  }
+  if (!regEmail.test(e.target.value) && e.target.value.trim() !== '') {
+    customerMail.classList.add('customerMail__error');
+  }
+});
+
+//phone
+const customerPhone = document.querySelector('.customerPhone');
+const customerPhone_input = customerPhone.querySelector('input');
+const customerPhone_label = customerPhone.querySelector('label');
+
+customerPhone_input.addEventListener('input', (e) => {
+  const inputValue = e.target.value;
+  const digitsOnly = inputValue.replace(/\D/g, ''); // Remove non-digit characters
+
+  if (digitsOnly.length > 0) {
+    const formattedNumber = `+${digitsOnly[0]} ${digitsOnly.slice(
+      1,
+      4
+    )} ${digitsOnly.slice(4, 7)} ${digitsOnly.slice(7, 9)} ${digitsOnly.slice(
+      9,
+      11
+    )}`;
+    e.target.value = formattedNumber;
+  } else {
+    e.target.value = ''; // Clear the input if no digits are present
+  }
+});
+customerPhone_input.addEventListener('focus', () => {
+  customerPhone_label.style.top = '-10px';
+  customerPhone_label.style.fontSize = '13px';
+  customerPhone_label.style.lineHeight = '16px';
+});
+customerPhone_input.addEventListener('blur', (e) => {
+  if (!e.target.value) {
+    customerPhone_label.style.top = '3px';
+    customerPhone_label.style.fontSize = '16px';
+    customerPhone_label.style.lineHeight = '24px';
+  }
+});
+
+//inn
+const customerInn = document.querySelector('.customerInn');
+const customerInn_input = customerInn.querySelector('input');
+const customerInn_label = customerInn.querySelector('label');
+customerInn_input.addEventListener('focus', () => {
+  customerInn_label.style.top = '-10px';
+  customerInn_label.style.fontSize = '13px';
+  customerInn_label.style.lineHeight = '16px';
+});
+customerInn_input.addEventListener('blur', (e) => {
+  if (!e.target.value) {
+    customerInn_label.style.top = '3px';
+    customerInn_label.style.fontSize = '16px';
+    customerInn_label.style.lineHeight = '24px';
+  }
+});
+
+//Обрабатываем сабмит кнопку
+const submitBtn = document.querySelector('.aside__submitBtn');
+submitBtn.addEventListener('click', () => {
+  const name = customerName_input.value;
+  const lname = customerLname_input.value;
+  const mail = customerMail_input.value;
+  const phone = customerPhone_input.value;
+  const inn = customerInn_input.value;
+  //Собираем данные с формы и комплектуем структуру данных
+  const structure = { name, lname, mail, phone, inn };
+
+  if (!name || !regName.test(name)) {
+    customerName.classList.add('customerName__error');
+    customerName_input.scrollIntoView();
+  } else {
+    customerName.classList.remove('customerName__error');
+  }
+  if (!lname || !regName.test(lname)) {
+    customerLname.classList.add('customerLname__error');
+    customerLname_input.scrollIntoView();
+  } else {
+    customerLname.classList.remove('customerLname__error');
+  }
+  if (!mail || !regEmail.test(mail)) {
+    customerMail.classList.add('customerMail__error');
+    customerMail_input.scrollIntoView();
+  } else {
+    customerMail.classList.remove('customerMail__error');
+  }
+  if (!phone) {
+    customerPhone.classList.add('customerPhone__error');
+    customerPhone_input.scrollIntoView();
+  } else {
+    customerPhone.classList.remove('customerPhone__error');
+  }
+  if (!inn) {
+    customerInn.classList.add('customerInn__error');
+    customerInn_input.scrollIntoView();
+  } else {
+    customerInn.classList.remove('customerInn__error');
+  }
+
+  if (!name || !lname || !mail || !phone || !inn) {
+    console.error(structure);
+    return;
+  }
+  console.log(structure);
+});

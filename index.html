@@ -1146,39 +1146,48 @@
             </p>
           </div>
           <div class="customer__fio">
-            <input
-              class="textField_standard"
-              id="customerName"
-              type="text"
-              placeholder="Имя"
-            />
-            <input
-              class="textField_standard"
-              id="customerLname"
-              type="text"
-              placeholder="Фамилия"
-            />
+            <div class="customerName">
+              <input
+                class="textField_standard fullWidth"
+                id="customerName"
+                type="text"
+              />
+              <label for="customerName">Имя</label>
+            </div>
+            <div class="customerLname">
+              <input
+                class="textField_standard fullWidth"
+                id="customerLname"
+                type="text"
+              />
+              <label for="customerLname">Фамилия</label>
+            </div>
           </div>
           <div class="customer__additionInfo">
-            <input
-              class="textField_standard"
-              id="customerMail"
-              type="text"
-              placeholder="Почта"
-            />
-            <input
-              class="textField_standard"
-              id="customerPhone"
-              type="text"
-              placeholder="Телефон"
-            />
-            <div class="textField__customerInn">
+            <div class="customerMail">
               <input
-                class="textField_standard"
+                class="textField_standard fullWidth"
+                id="customerMail"
+                type="text"
+              />
+              <label for="customerMail">Почта</label>
+            </div>
+            <div class="customerPhone">
+              <input
+                class="textField_standard fullWidth"
+                id="customerPhone"
+                type="text"
+              />
+              <label for="customerPhone">Телефон</label>
+            </div>
+
+            <div class="customerInn">
+              <input
+                class="textField_standard fullWidth"
                 id="customerInn"
                 type="text"
-                placeholder="ИНН"
               />
+              <label for="customerInn">ИНН</label>
             </div>
           </div>
         </div>
