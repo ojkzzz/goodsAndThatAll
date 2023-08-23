@@ -11,69 +11,69 @@
 
 @font-face {
   font-family: 'Segoe UI';
-  src: url('../src/assets/fonts/SegoeUI/SegoeUI-Light.eot');
+  src: url('../assets/fonts/SegoeUI/SegoeUI-Light.eot');
   src:
-    local('../src/assets/fonts/SegoeUI/Segoe UI Light'),
-    local('../src/assets/fonts/SegoeUI/SegoeUI-Light'),
-    url('../src/assets/fonts/SegoeUI/SegoeUI-Light.eot?#iefix')
+    local('../assets/fonts/SegoeUI/Segoe UI Light'),
+    local('../assets/fonts/SegoeUI/SegoeUI-Light'),
+    url('../assets/fonts/SegoeUI/SegoeUI-Light.eot?#iefix')
       format('embedded-opentype'),
-    url('../src/assets/fonts/SegoeUI/SegoeUI-Light.woff') format('woff'),
-    url('../src/assets/fonts/SegoeUI/SegoeUI-Light.ttf') format('truetype');
+    url('../assets/fonts/SegoeUI/SegoeUI-Light.woff') format('woff'),
+    url('../assets/fonts/SegoeUI/SegoeUI-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Segoe UI';
-  src: url('../src/assets/fonts/SegoeUI/SegoeUI-Bold.eot');
+  src: url('../assets/fonts/SegoeUI/SegoeUI-Bold.eot');
   src:
-    local('../src/assets/fonts/SegoeUI/Segoe UI Semibold'),
-    local('../src/assets/fonts/SegoeUI/SegoeUI-SemiBold'),
-    url('../src/assets/fonts/SegoeUI/SegoeUI-SemiBold.eot?#iefix')
+    local('../assets/fonts/SegoeUI/Segoe UI Semibold'),
+    local('../assets/fonts/SegoeUI/SegoeUI-SemiBold'),
+    url('../assets/fonts/SegoeUI/SegoeUI-SemiBold.eot?#iefix')
       format('embedded-opentype'),
-    url('../src/assets/fonts/SegoeUI/SegoeUI-SemiBold.woff') format('woff'),
-    url('../src/assets/fonts/SegoeUI/SegoeUI-SemiBold.ttf') format('truetype');
+    url('../assets/fonts/SegoeUI/SegoeUI-SemiBold.woff') format('woff'),
+    url('../assets/fonts/SegoeUI/SegoeUI-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: 'Segoe UI';
-  src: url('../src/assets/fonts/SegoeUI/SegoeUI-Bold.eot');
+  src: url('../assets/fonts/SegoeUI/SegoeUI-Bold.eot');
   src:
-    local('../src/assets/fonts/SegoeUI/Segoe UI Semibold'),
-    local('../src/assets/fonts/SegoeUI/SegoeUI-SemiBold'),
-    url('../src/assets/fonts/SegoeUI/SegoeUI-SemiBold.eot?#iefix')
+    local('../assets/fonts/SegoeUI/Segoe UI Semibold'),
+    local('../assets/fonts/SegoeUI/SegoeUI-SemiBold'),
+    url('../assets/fonts/SegoeUI/SegoeUI-SemiBold.eot?#iefix')
       format('embedded-opentype'),
-    url('../src/assets/fonts/SegoeUI/SegoeUI-SemiBold.woff') format('woff'),
-    url('../src/assets/fonts/SegoeUI/SegoeUI-SemiBold.ttf') format('truetype');
+    url('../assets/fonts/SegoeUI/SegoeUI-SemiBold.woff') format('woff'),
+    url('../assets/fonts/SegoeUI/SegoeUI-SemiBold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Segoe UI';
-  src: url('../src/assets/fonts/SegoeUI/SegoeUI.eot');
+  src: url('../assets/fonts/SegoeUI/SegoeUI.eot');
   src:
-    local('../src/assets/fonts/SegoeUI/Segoe UI'),
-    local('../src/assets/fonts/SegoeUI/SegoeUI'),
-    url('../src/assets/fonts/SegoeUI/SegoeUI.eot?#iefix')
+    local('../assets/fonts/SegoeUI/Segoe UI'),
+    local('../assets/fonts/SegoeUI/SegoeUI'),
+    url('../assets/fonts/SegoeUI/SegoeUI.eot?#iefix')
       format('embedded-opentype'),
-    url('../src/assets/fonts/SegoeUI/SegoeUI.woff') format('woff'),
-    url('../src/assets/fonts/SegoeUI/SegoeUI.ttf') format('truetype');
+    url('../assets/fonts/SegoeUI/SegoeUI.woff') format('woff'),
+    url('../assets/fonts/SegoeUI/SegoeUI.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Segoe UI';
-  src: url('../src/assets/fonts/SegoeUI/SegoeUI-Bold.eot');
+  src: url('../assets/fonts/SegoeUI/SegoeUI-Bold.eot');
   src:
-    local('../src/assets/fonts/SegoeUI/Segoe UI Bold'),
-    local('../src/assets/fonts/SegoeUI/SegoeUI-Bold'),
-    url('../src/assets/fonts/SegoeUI/SegoeUI-Bold.eot?#iefix')
+    local('../assets/fonts/SegoeUI/Segoe UI Bold'),
+    local('../assets/fonts/SegoeUI/SegoeUI-Bold'),
+    url('../assets/fonts/SegoeUI/SegoeUI-Bold.eot?#iefix')
       format('embedded-opentype'),
-    url('../src/assets/fonts/SegoeUI/SegoeUI-Bold.woff') format('woff'),
-    url('../src/assets/fonts/SegoeUI/SegoeUI-Bold.ttf') format('truetype');
+    url('../assets/fonts/SegoeUI/SegoeUI-Bold.woff') format('woff'),
+    url('../assets/fonts/SegoeUI/SegoeUI-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
@@ -199,9 +199,6 @@ button {
   display: flex;
 }
 
-.accordionBody {
-  transition: all 0.1s;
-}
 .unexpanded__priceInfo {
   display: none;
 }
@@ -226,8 +223,7 @@ button {
 }
 
 .unexpanded .accordionBody {
-  position: absolute;
-  bottom: 5000px;
+  display: none;
 }
 
 /* Custom checkbox */

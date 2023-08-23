@@ -1,0 +1,95 @@
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+.overlay {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(5, 0, 10, 0.3);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.modal {
+  padding: 16px 22px 24px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.modalDelivery {
+  width: 500px;
+}
+.modalPayment {
+  width: 400px;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 13px;
+}
+
+.modalHeaderBtn {
+  transform: translateY(5px);
+}
+
+.modalTitle {
+  color: #000;
+  font-family: Segoe UI;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: -0.2px;
+}
+
+.modalBodyPayment {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 123px;
+}
+
+.modalPaymentItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+}
+
+.modalPaymentItem:hover {
+  cursor: pointer;
+}
+
+.typography__cardNumbers {
+  color: #000;
+
+  font-family: Segoe UI;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.modalBodyRadio_active svg circle {
+  fill: #cb11ab;
+  stroke: #cb11ab;
+}
+
+.modalFooter__btn {
+  border-radius: 8px;
+  padding: 8px 48px;
+  background: #cb11ab;
+  margin-left: auto;
+  color: var(--system-white, #fff);
+  text-align: center;
+  font-family: Segoe UI;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+}

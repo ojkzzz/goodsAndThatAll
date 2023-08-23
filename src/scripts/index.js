@@ -644,7 +644,6 @@ const unexpanded__priceInfo = document.querySelector('.unexpanded__priceInfo');
 const fields = unexpanded__priceInfo.querySelectorAll('span');
 const amout = fields[0];
 const price = fields[2];
-console.log(price.textContent);
 
 const accordions = document.querySelectorAll('.accordion');
 accordions.forEach((accordion) => {
