@@ -45,8 +45,8 @@ const createModal = (type) => {
       footerCallback = () => {
         console.log('доставка');
       };
-
       break;
+
     case 'payment':
       overlay.addEventListener('click', destroyPaymentModal);
       modal.classList.add('modalPayment');
@@ -117,6 +117,11 @@ function createModalBodyPayment() {
     radio.classList.add('modalBodyRadio');
     radio.classList.add(`modalBodyRadio-${card.id}`);
 
+    const aside__cardP = document.querySelector('.aside__cardImg ~ p');
+    if (globalCreditCardId !== 1 && card.number === aside__cardP.textContent) {
+      radio.classList.add('modalBodyRadio_active');
+    }
+
     modalPaymentItem.addEventListener('click', () => {
       const lastActiveRadio = document.querySelector(
         `.modalBodyRadio-${creditCardId}`
@@ -124,8 +129,6 @@ function createModalBodyPayment() {
       lastActiveRadio.classList.remove('modalBodyRadio_active');
       creditCardId = card.id;
       radio.classList.add('modalBodyRadio_active');
-
-      console.log(creditCardId);
     });
 
     const cardImg = document.createElement('img');
@@ -142,19 +145,19 @@ function createModalBodyPayment() {
     body.append(modalPaymentItem);
   });
 
-  //   console.log(lastActiveRadio);
-
-  Promise.resolve().then(() => {
-    const lastActiveRadio = document.querySelector(`.modalBodyRadio-${1}`);
-    lastActiveRadio.classList.add('modalBodyRadio_active');
-  });
+  if (creditCardId === 1) {
+    Promise.resolve().then(() => {
+      const lastActiveRadio = document.querySelector(`.modalBodyRadio-${1}`);
+      lastActiveRadio.classList.add('modalBodyRadio_active');
+    });
+  }
 
   return body;
 }
 
 function createModalBodyDelivery() {
   const body = document.createElement('div');
-  body.classList.add('modalBodyDel;ivery');
+  body.classList.add('modalBodyDelivery');
   return body;
 }
 
@@ -171,9 +174,11 @@ function createModalFooter(callback) {
 
 function destroyPaymentModal() {
   const overlay = document.querySelector('.overlay');
+  const exit = document.querySelector('.modalHeaderBtn');
   overlay.remove();
   enableScrolling();
   overlay.removeEventListener('click', destroyPaymentModal);
+  exit.removeEventListener('click', destroyPaymentModal);
 }
 
 function renderPaymentMethod() {
@@ -189,7 +194,11 @@ function renderPaymentMethod() {
   aside__cardP.textContent = choosen.number;
 }
 
-createModal('payment');
+const asideEditBtn = document.querySelector('.aside__paymentHeader button');
+asideEditBtn.addEventListener('click', () => createModal('payment'));
+
+const paymentEditBtn = document.querySelector('.payment__header .btn');
+paymentEditBtn.addEventListener('click', () => createModal('payment'));
 
 function enableScrolling() {
   document.body.classList.remove('stop-scrolling');
