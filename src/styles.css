@@ -136,7 +136,7 @@ button {
 .textField_standard ~ label {
   position: absolute;
   left: 4px;
-  top: 3px;
+  top: 13px;
   transition: all 0.2s;
 
   color: #a0a0a4;
@@ -202,8 +202,19 @@ button {
 .accordionBody {
   transition: all 0.1s;
 }
+.unexpanded__priceInfo {
+  display: none;
+}
+
+.unexpanded .unexpanded__priceInfo {
+  display: block;
+}
 .unexpanded .accordionHeader {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.unexpanded .checkboxContainer {
+  display: none;
 }
 
 .accordionHeader button {
@@ -535,18 +546,21 @@ button:hover {
   color: #0cb477;
 }
 
-.freeRefund:hover {
-  cursor: pointer;
-}
-.freeRefund:hover ~ .tooltip {
-  display: flex;
-  top: 50px;
-  padding: 10px 16px 14px;
-  left: -10px;
+.refundInfo {
+  position: relative;
+  /* display: flex;
+  flex-direction: row; */
 }
 
-.delivery__refund:hover ~ .tooltip {
-  right: 0;
+.typography_green:hover {
+  cursor: pointer;
+}
+.typography_green:hover ~ .tooltip {
+  display: flex;
+  width: 100%;
+  top: 50px;
+  padding: 10px 16px 14px;
+  left: -30px;
 }
 
 .aside__payment {
@@ -1003,8 +1017,10 @@ button:hover {
   align-items: center;
   gap: 8px;
 }
-.freeRefund {
-  position: relative;
+
+.delivery__refund .typography_green:hover ~ .tooltip {
+  left: 150px;
+  top: 30px;
 }
 
 .typography_green {
@@ -1067,6 +1083,7 @@ button:hover {
 .customerInn {
   flex-grow: 1;
   position: relative;
+  padding: 13px 0 16px;
 }
 
 .customerName__error .textField_standard,
@@ -1091,7 +1108,7 @@ button:hover {
   line-height: 14px;
   position: absolute;
   left: 3px;
-  bottom: -15px;
+  bottom: 0;
   white-space: nowrap;
 }
 
@@ -1403,14 +1420,6 @@ footer {
     width: 100%;
   }
 
-  .customerName,
-  .customerLname,
-  .customerMail,
-  .customerPhone,
-  .customerInn {
-    padding: 13px 0 16px;
-  }
-
   .customerInn::after {
     bottom: 0;
   }
@@ -1421,9 +1430,5 @@ footer {
   .customerPhone__error.customerPhone::after,
   .customerInn__error.customerInn::after {
     bottom: 0;
-  }
-
-  .textField_standard ~ label {
-    top: 13px;
   }
 }

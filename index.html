@@ -150,6 +150,11 @@
           <!-- Accordion start  -->
           <div class="accordion">
             <div class="accordionHeader">
+              <div class="unexpanded__priceInfo">
+                <span class="unavailiableBasketTypography">test</span>
+                <span class="unavailiableBasketTypography">·</span>
+                <span class="unavailiableBasketTypography">test</span>
+              </div>
               <label
                 class="checkboxContainer usualTypography basket__typography_big flexEnd"
                 >Выбрать все
@@ -1227,7 +1232,7 @@
             <div class="delivery__listOfDeleliveries"></div>
           </div>
 
-          <div class="delivery__refund freeRefund">
+          <div class="delivery__refund">
             <svg
               width="22"
               height="22"
@@ -1272,13 +1277,18 @@
                 </linearGradient>
               </defs>
             </svg>
-            <p class="usualTypography basket__typography_small freeRefund">
-              Обратная доставка товаров на склад при отказе —
+            <div class="refundInfo">
+              <span class="usualTypography basket__typography_small">
+                Обратная доставка товаров на склад при отказе —
+              </span>
               <span class="typography_green">бесплатно</span>
               <div class="tooltip">
-                <p class="usualTypography aside__usualTypography_small">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</p>
+                <p class="usualTypography aside__usualTypography_small">
+                  Если товары вам не подойдут, мы вернем их обратно на склад —
+                  это бесплатно
+                </p>
               </div>
-            </p>
+            </div>
           </div>
         </div>
         <!-- Delivery -->
@@ -1516,13 +1526,21 @@
               </linearGradient>
             </defs>
           </svg>
-          <p class="usualTypography aside__usualTypography_small freeRefund">
-            Обратная доставка товаров на склад при отказе —
-            <span class="aside__usualTypography_green">бесплатно</span>
+          <div class="refundInfo">
+            <span class="usualTypography basket__typography_small">
+              Обратная доставка товаров на склад при отказе —
+            </span>
+            <span
+              class="usualTypography basket__typography_small typography_green"
+              >бесплатно</span
+            >
             <div class="tooltip">
-              <p class="usualTypography aside__usualTypography_small">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</p>
+              <p class="usualTypography aside__usualTypography_small">
+                Если товары вам не подойдут, мы вернем их обратно на склад — это
+                бесплатно
+              </p>
             </div>
-          </p>
+          </div>
         </div>
 
         <div class="aside__payment">

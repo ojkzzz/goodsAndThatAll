@@ -2,6 +2,7 @@
 const getNumberWithSpaces = (x) =>
   x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 
+//Функция склонения в зависимости от числа
 const getNoun = (number, one, two, three) => {
   let n = Math.abs(number);
   n %= 100;
@@ -20,9 +21,9 @@ const getNoun = (number, one, two, three) => {
 
 const instantPaymet = document.getElementById('instantPaymet');
 
-const desktopCheckAllCheckbox = document.getElementById('checkAll');
+const checkAll = document.getElementById('checkAll');
 // Делаем чекбокс выбора всех товаров по дефолту тру
-desktopCheckAllCheckbox.checked = true;
+checkAll.checked = true;
 
 // Cчетчик корзины в хедере
 const basketCounter = document.querySelector('.header__basketCounter');
@@ -36,7 +37,7 @@ const basketAvailableGoods = document.querySelectorAll(
   '.basket__availableGoods'
 );
 
-// Берем первый попавшийся, так как знаем, что второй такой же для мобильных устройст
+// Берем первый попавшийся, так как знаем, что второй такой же задизейбленный
 const basketGoodsDesktopItems =
   basketAvailableGoods[0].querySelectorAll('.basket__goodsItem');
 
@@ -46,14 +47,14 @@ const itemChekboxes = basketAvailableGoods[0].querySelectorAll(
 );
 
 //Вешаем слушатель на чекбокс "Выбрать все"
-desktopCheckAllCheckbox.addEventListener('input', () => {
+checkAll.addEventListener('input', () => {
   //Описываем логику работы приложения при изменениях состояния
   const finalySum = document.getElementById('finalySum');
   const countOfGoods = document.getElementById('countOfGoods');
   const sumOfGoods = document.getElementById('sumOfGoods');
   const discount = document.getElementById('discount');
   //Уходим в ветвление, когда чекбокс тру
-  if (desktopCheckAllCheckbox.checked) {
+  if (checkAll.checked) {
     //Пробегаемся по всему списку айтемов, прокликиваем все чекбоксы
     itemChekboxes.forEach((checkbox) => (checkbox.checked = true));
     // Обнуляем список, ищем все айтемы и добавляем их в список
@@ -268,8 +269,7 @@ basketGoodsDesktopItems.forEach((item, index) => {
     }
     if (!orderList.length) {
       basketCounter.style.display = 'none';
-      if (desktopCheckAllCheckbox.checked)
-        desktopCheckAllCheckbox.checked = false;
+      if (checkAll.checked) checkAll.checked = false;
     } else {
       basketCounter.style.display = 'flex';
       basketCounterText.textContent = orderList.length;
@@ -456,7 +456,7 @@ customerName_input.addEventListener('input', (e) => {
   }
 });
 customerName_input.addEventListener('focus', () => {
-  customerName_label.style.top = '-10px';
+  customerName_label.style.top = '0';
   customerName_label.style.fontSize = '13px';
   customerName_label.style.lineHeight = '16px';
 });
@@ -481,7 +481,7 @@ customerLname_input.addEventListener('input', (e) => {
   }
 });
 customerLname_input.addEventListener('focus', () => {
-  customerLname_label.style.top = '-10px';
+  customerLname_label.style.top = '0';
   customerLname_label.style.fontSize = '13px';
   customerLname_label.style.lineHeight = '16px';
 });
@@ -507,7 +507,7 @@ customerMail_input.addEventListener('input', (e) => {
   }
 });
 customerMail_input.addEventListener('focus', () => {
-  customerMail_label.style.top = '-10px';
+  customerMail_label.style.top = '0';
   customerMail_label.style.fontSize = '13px';
   customerMail_label.style.lineHeight = '16px';
 });
@@ -544,8 +544,9 @@ customerPhone_input.addEventListener('input', (e) => {
     e.target.value = ''; // Clear the input if no digits are present
   }
 });
+
 customerPhone_input.addEventListener('focus', () => {
-  customerPhone_label.style.top = '-10px';
+  customerPhone_label.style.top = '0';
   customerPhone_label.style.fontSize = '13px';
   customerPhone_label.style.lineHeight = '16px';
 });
@@ -554,6 +555,9 @@ customerPhone_input.addEventListener('blur', (e) => {
     customerPhone_label.style.top = '13px';
     customerPhone_label.style.fontSize = '16px';
     customerPhone_label.style.lineHeight = '24px';
+  }
+  if (e.target.value !== '' && e.target.value.length > 30) {
+    customerPhone.classList.add('customerPhone__error');
   }
 });
 
@@ -570,7 +574,7 @@ customerInn_input.addEventListener('input', (e) => {
   e.target.value = textValue;
 });
 customerInn_input.addEventListener('focus', () => {
-  customerInn_label.style.top = '-10px';
+  customerInn_label.style.top = '0';
   customerInn_label.style.fontSize = '13px';
   customerInn_label.style.lineHeight = '16px';
 });
@@ -580,7 +584,7 @@ customerInn_input.addEventListener('blur', (e) => {
     customerInn_label.style.fontSize = '16px';
     customerInn_label.style.lineHeight = '24px';
   }
-  if (e.target.value.length !== 14) {
+  if (e.target.value.length !== 14 && e.target.value !== '') {
     customerInn.classList.add('customerInn__error');
   }
 });
@@ -636,10 +640,31 @@ submitBtn.addEventListener('click', () => {
 
 //Accordion
 
+const unexpanded__priceInfo = document.querySelector('.unexpanded__priceInfo');
+const fields = unexpanded__priceInfo.querySelectorAll('span');
+const amout = fields[0];
+const price = fields[2];
+console.log(price.textContent);
+
 const accordions = document.querySelectorAll('.accordion');
 accordions.forEach((accordion) => {
   const btn = accordion.querySelector('button');
   btn.addEventListener('click', () => {
     accordion.classList.toggle('unexpanded');
+    if (accordion.classList.contains('unexpanded')) {
+      const countOfGoodsNumbers = orderList.reduce(
+        (acc, cur) => acc + cur.amount,
+        0
+      );
+      amout.textContent =
+        countOfGoodsNumbers +
+        ' ' +
+        getNoun(countOfGoodsNumbers, 'товар', 'товара', 'товаров');
+
+      const finalySumNumbers = getNumberWithSpaces(
+        orderList.reduce((acc, cur) => acc + cur.price * cur.amount, 0)
+      );
+      price.textContent = finalySumNumbers + ' сом';
+    }
   });
 });
