@@ -94,8 +94,63 @@
   line-height: 24px;
 }
 
+.modalBodyDelivery__tabs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+.modalBodyDelivery__tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  width: 224px;
+
+  border: 2px solid rgba(203, 17, 171, 0.15);
+  border-radius: 20px;
+
+  transition: border-color 0.2s;
+}
+
+.modalBodyDelivery__typography {
+  color: #000;
+  font-family: Segoe UI;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.modalBodyDelivery__typography_mb8 {
+  margin-bottom: 8px;
+}
+
+.modalBodyDelivery__tab:hover {
+  cursor: pointer;
+}
+
+.modalBodyDelivery__activeTab {
+  border-color: #cb11ab;
+}
+
+.addressCourierItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.addressCourierItem .btn {
+  transform: translateY(2px);
+}
+
 @media (max-width: 400px) {
   .modalPayment {
-    width: 80%;
+    width: 320px;
+  }
+  .modalFooter__btn {
+    width: 100%;
   }
 }

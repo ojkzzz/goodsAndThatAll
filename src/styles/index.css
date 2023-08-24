@@ -896,6 +896,11 @@ button:hover {
   background: #fff;
 }
 
+.basket__changeAmountBtns .btn {
+  flex-grow: 1;
+  height: 100%;
+}
+
 .basket__additionalBtns {
   display: flex;
   flex-direction: row;

@@ -528,21 +528,9 @@ const customerPhone_input = customerPhone.querySelector('input');
 const customerPhone_label = customerPhone.querySelector('label');
 
 customerPhone_input.addEventListener('input', (e) => {
-  const inputValue = e.target.value;
-  const digitsOnly = inputValue.replace(/\D/g, ''); // Remove non-digit characters
-
-  if (digitsOnly.length > 0) {
-    const formattedNumber = `+${digitsOnly[0]} ${digitsOnly.slice(
-      1,
-      4
-    )} ${digitsOnly.slice(4, 7)} ${digitsOnly.slice(7, 9)} ${digitsOnly.slice(
-      9,
-      11
-    )}`;
-    e.target.value = formattedNumber;
-  } else {
-    e.target.value = ''; // Clear the input if no digits are present
-  }
+  e.target.value = e.target.value
+    .replace(/\D+/g, '')
+    .replace(/(\d{1})(\d{3})(\d{3})(\d{4})/, '+$1 ($2) $3-$4');
 });
 
 customerPhone_input.addEventListener('focus', () => {
