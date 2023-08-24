@@ -22,7 +22,23 @@
 
 .modalDelivery {
   width: 500px;
+  min-height: 408px;
+
+  display: flex;
+  flex-direction: column;
 }
+
+.modalDelivery .modalFooter__btn {
+  margin-left: unset;
+  margin-right: auto;
+  margin-top: auto;
+}
+
+.modalDelivery .typography__cardNumbers {
+  margin-left: 8px;
+  width: 400px;
+}
+
 .modalPayment {
   width: 400px;
 }
@@ -75,6 +91,15 @@
   font-weight: 400;
   line-height: 24px;
 }
+
+.typography__cardNumbers_small {
+  font-size: 13px;
+}
+.typography__cardNumbers_grey {
+  color: #a0a0a4;
+  margin-left: 0;
+}
+
 .modalBodyRadio_active svg circle {
   fill: #cb11ab;
   stroke: #cb11ab;
@@ -124,16 +149,23 @@
   line-height: 16px;
 }
 
-.modalBodyDelivery__typography_mb8 {
-  margin-bottom: 8px;
+.modalBodyDelivery__typography_header {
+  margin-bottom: 17px;
 }
 
-.modalBodyDelivery__tab:hover {
+.modalBodyDelivery__tab:hover,
+.addressPickupItem:hover {
   cursor: pointer;
 }
 
 .modalBodyDelivery__activeTab {
   border-color: #cb11ab;
+}
+
+.modalBodyDelivery__addressCourierList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .addressCourierItem {
@@ -142,8 +174,35 @@
   align-items: center;
 }
 
-.addressCourierItem .btn {
+.addressCourierItem:hover {
+  cursor: pointer;
+}
+
+.addressCourierItem .btn,
+.addressPickupItem .btn {
   transform: translateY(2px);
+}
+
+.removeBtn {
+  margin-left: auto;
+  align-self: flex-start;
+  transition: all 0.3s;
+}
+
+.removeBtn:hover path {
+  fill: #f55123;
+}
+
+.modalBodyDelivery__addressPickupList {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+}
+
+.addressPickupItem {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 @media (max-width: 400px) {
