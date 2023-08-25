@@ -77,7 +77,6 @@ const createModal = (type) => {
       header = createModalHeader('Способ доставки', destroyModal);
       body = createModalBodyDelivery();
       footerCallback = () => {
-        // console.log(deliveryTypeId, globalDeliveryTypeId);
         globalDeliveryTypeId = deliveryTypeId;
         globalCourierAddressId = courierAddressId;
         globalPickupAddressId = pickupAddressId;
@@ -295,7 +294,6 @@ function createModalBodyDelivery() {
 
     removeBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      console.log('deleted');
     });
 
     addressCourierItem.append(radio);
@@ -337,7 +335,6 @@ function createModalBodyDelivery() {
       lastActiveRadio.classList.remove('modalBodyRadio_active');
       pickupAddressId = address.id;
       radio.classList.add('modalBodyRadio_active');
-      console.log('picked');
     });
 
     const addresPickupTypographyBox = document.createElement('div');
@@ -373,7 +370,6 @@ function createModalBodyDelivery() {
 
     removeBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      console.log('deleted');
     });
 
     addressPickupItem.append(radio);

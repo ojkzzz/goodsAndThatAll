@@ -1,0 +1,24 @@
+.payment,
+.customer {
+  display: flex;
+  padding: 16px 24px 24px 24px;
+  flex-direction: column;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.payment__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.payment__info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 8px;
+}

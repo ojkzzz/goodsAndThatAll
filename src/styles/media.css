@@ -1,0 +1,267 @@
+@media screen and (min-width: 1440px) {
+  .header__searchInputBox {
+    width: 970px;
+  }
+  .header__searchInput {
+    width: 898px;
+  }
+  .header__nav {
+    gap: 50px;
+  }
+  .aside {
+    width: 449px;
+  }
+}
+
+@media (max-width: 1000px) {
+  html {
+    overflow-x: hidden;
+  }
+  .header {
+    padding: 11px 13px;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .header__btn {
+    border: unset;
+    padding: 0;
+  }
+  br {
+    display: none;
+  }
+  .header__nav {
+    display: none;
+  }
+  .header__brandName {
+    margin-right: 16px;
+    position: relative;
+    bottom: 7px;
+  }
+  .header__searchInputBox {
+    display: none;
+  }
+  .header__searchBtn {
+    display: block;
+  }
+  .goods {
+    flex-direction: column;
+    padding: 16px;
+  }
+  .goods__leftSide {
+    width: 100%;
+  }
+
+  .basket__headerTypography {
+    margin-bottom: 16px;
+  }
+
+  .basket__goodsItem_moble {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .basket__checkboxAndImg {
+    position: relative;
+  }
+  .basket__checkboxContainer {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+  }
+  .basket__goodsItem {
+    flex-direction: column;
+  }
+  .basket__price {
+    display: none;
+  }
+  .basket__price_mobile {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    align-items: baseline;
+    gap: 5px;
+  }
+  .basket__itemSize {
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    background: #fff;
+    min-width: 22px;
+    max-width: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 22px;
+    border-radius: 6px;
+    font-family: Segoe UI;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+  }
+  .basket__typography_bold {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+  }
+  .basket__typography_big {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  .basket__box1 {
+    width: auto;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .basket__btns {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    margin-top: 12px;
+  }
+  .basket__changeAmountBtns {
+    width: 80px;
+    height: 32px;
+  }
+  .basket__img {
+    width: 80px;
+    height: 106px;
+  }
+  .basket__goodsName {
+    width: 190px;
+    max-height: 48px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .basket__descriptionSize p:nth-child(2) {
+    display: none;
+  }
+  .basket__size_mobile {
+    min-width: 22px;
+    max-width: 72px;
+    height: 22px;
+    display: block;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    background: #fff;
+    border-radius: 6px;
+    color: #000;
+    font-family: Segoe UI;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .basket__stock {
+    display: none;
+  }
+  .accordionBody .basket__goodsName {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .unavailiableBasket .basket__price {
+    display: none;
+  }
+  .unavailiableBasket .basket__btns {
+    flex-direction: row-reverse;
+  }
+  .basket__delivery,
+  .payment,
+  .customer,
+  .aside {
+    width: calc(100% + 32px);
+    padding: 16px;
+    padding-bottom: 24px;
+    transform: translateX(-16px);
+  }
+  .aside {
+    box-shadow: unset;
+    border-radius: unset;
+    background: unset;
+    padding: 16px 24px;
+  }
+  .aside__refund,
+  .aside__paymentAdditional {
+    background: #f0ecf4;
+  }
+  .aside__delivery,
+  .aside__paymentHeader,
+  .aside__paymentInfo {
+    display: none;
+  }
+  .aside__basketInfo,
+  .aside__refund {
+    margin-bottom: 16px;
+  }
+  .aside__usualTypography_header {
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.2px;
+  }
+  .delivery__header {
+    align-items: baseline;
+  }
+
+  .delivery__pickUpPoint {
+    flex-direction: column;
+    gap: unset;
+  }
+  .delivery__descriptions {
+    padding-top: 8px;
+  }
+  .basket__typography_big {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .pickUpAddress__schedule {
+    margin-top: 4px;
+  }
+  .delivery__cost {
+    flex-direction: column;
+    gap: unset;
+  }
+  .delivery__deliveryItem {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .payment__header {
+    align-items: baseline;
+  }
+  .customer__fio,
+  .customer__additionInfo {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 0;
+  }
+  #customerInn {
+    width: 100%;
+  }
+
+  .customerInn::after {
+    bottom: 0;
+  }
+
+  .customerName__error.customerName::after,
+  .customerLname__error.customerLname::after,
+  .customerMail__error.customerMail::after,
+  .customerPhone__error.customerPhone::after,
+  .customerInn__error.customerInn::after {
+    bottom: 0;
+  }
+}

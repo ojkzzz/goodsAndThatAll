@@ -22,7 +22,7 @@
 
 .modalDelivery {
   width: 500px;
-  min-height: 408px;
+  height: 500px;
 
   display: flex;
   flex-direction: column;
@@ -197,6 +197,7 @@
   display: flex;
   flex-direction: column;
   padding-bottom: 40px;
+  gap: 20px;
 }
 
 .addressPickupItem {
@@ -206,10 +207,31 @@
 }
 
 @media (max-width: 400px) {
-  .modalPayment {
+  .modalPayment,
+  .modalDelivery {
     width: 320px;
+    height: 95%;
+  }
+  .modalPayment {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modalPayment .modalFooter__btn {
+    margin-top: auto;
   }
   .modalFooter__btn {
     width: 100%;
+  }
+  .modalDelivery .typography__cardNumbers {
+    width: 236px;
+  }
+  .modalBodyDelivery__addressPickupList,
+  .modalBodyDelivery__addressCourierList {
+    padding-bottom: 0;
+    gap: 2px;
+  }
+  .addressCourierItem .btn {
+    align-self: flex-start;
   }
 }

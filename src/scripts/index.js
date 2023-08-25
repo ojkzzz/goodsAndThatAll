@@ -530,7 +530,10 @@ const customerPhone_label = customerPhone.querySelector('label');
 customerPhone_input.addEventListener('input', (e) => {
   e.target.value = e.target.value
     .replace(/\D+/g, '')
-    .replace(/(\d{1})(\d{3})(\d{3})(\d{4})/, '+$1 ($2) $3-$4');
+    .replace(/(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})/, '+$1 $2 $3 $4 $5 ');
+  if (e.target.value.length <= 30) {
+    customerPhone.classList.remove('customerPhone__error');
+  }
 });
 
 customerPhone_input.addEventListener('focus', () => {
@@ -606,7 +609,7 @@ submitBtn.addEventListener('click', () => {
   } else {
     customerMail.classList.remove('customerMail__error');
   }
-  if (!phone) {
+  if (!phone !== phone.length > 30) {
     customerPhone.classList.add('customerPhone__error');
     customerPhone_input.scrollIntoView();
   } else {

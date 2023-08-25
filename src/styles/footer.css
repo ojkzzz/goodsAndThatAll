@@ -1,0 +1,17 @@
+footer {
+  padding: 24px;
+  background: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__typography {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Segoe UI;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}

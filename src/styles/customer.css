@@ -1,0 +1,86 @@
+.customer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.customer__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.customer__fio,
+.customer__additionInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  margin-top: 7px;
+}
+
+.customerName,
+.customerLname,
+.customerMail,
+.customerPhone,
+.customerInn {
+  flex-grow: 1;
+  position: relative;
+  padding: 13px 0 16px;
+}
+
+.customerName__error .textField_standard,
+.customerLname__error .textField_standard,
+.customerMail__error .textField_standard,
+.customerPhone__error .textField_standard,
+.customerInn__error .textField_standard {
+  color: #f55123;
+  border-bottom-color: #f55123;
+}
+
+.customerName__error.customerName::after,
+.customerLname__error.customerLname::after,
+.customerMail__error.customerMail::after,
+.customerPhone__error.customerPhone::after,
+.customerInn__error.customerInn::after {
+  color: #f55123;
+  font-family: Segoe UI;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  position: absolute;
+  left: 3px;
+  bottom: 0;
+  white-space: nowrap;
+}
+
+.customerInn::after {
+  content: 'Для таможенного оформления';
+  color: #000;
+  font-family: Segoe UI;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  position: absolute;
+  left: 3px;
+  bottom: 0;
+  white-space: nowrap;
+}
+
+.customerName__error::after {
+  content: 'Укажите имя';
+}
+
+.customerLname__error::after {
+  content: 'Введите фамилию';
+}
+.customerMail__error::after {
+  content: 'Проверьте адрес';
+}
+.customerPhone__error::after {
+  content: 'Формат: +9 999 999 99 99';
+}
+.customerInn__error::after {
+  content: 'Проверьте ИНН';
+}
